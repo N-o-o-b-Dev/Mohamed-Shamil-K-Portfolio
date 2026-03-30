@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Mail, ChevronDown, ArrowRight, Download } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import profileImg from '../assets/profile.png';
+import cvFile from '../assets/Mohamed_Shamil_CV (1).pdf';
 
 const Hero = () => {
   return (
@@ -51,7 +52,7 @@ const Hero = () => {
                 View Work
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="/Mohamed_Shamil_K_CV.pdf" download className="group flex items-center gap-2 px-8 py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg backdrop-blur-sm">
+              <a href={cvFile} download="Mohamed_Shamil_CV.pdf" className="group flex items-center gap-2 px-8 py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg backdrop-blur-sm">
                 Download CV
                 <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </a>
