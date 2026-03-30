@@ -2,6 +2,7 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://N-o-o-b-Dev.github.io/Mohamed-Shamil-K-Portfolio",
   "type": "module",
   "scripts": {
     "dev": "vite",
