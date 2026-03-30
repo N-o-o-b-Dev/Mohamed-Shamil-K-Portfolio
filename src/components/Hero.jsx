@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, ChevronDown, ArrowRight } from 'lucide-react';
+import { Mail, ChevronDown, ArrowRight, Download } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import profileImg from '../assets/profile.jpg';
 
@@ -50,6 +50,10 @@ const Hero = () => {
               <a href="#projects" className="group flex items-center gap-2 px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]">
                 View Work
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a href="/Mohamed_Shamil_K_CV.pdf" download className="group flex items-center gap-2 px-8 py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg backdrop-blur-sm">
+                Download CV
+                <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </a>
               <div className="flex items-center gap-3">
                 <a href="https://github.com/N-o-o-b-Dev" target="_blank" rel="noreferrer" className="p-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 text-white backdrop-blur-sm">
