@@ -1,120 +1,208 @@
 import { motion } from 'framer-motion';
-import { Mail, ChevronDown, ArrowRight, Download } from 'lucide-react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { Mail, ChevronDown, ArrowRight, Download, Sparkles, TrendingUp, Layers, ShieldCheck } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import profileImg from '../assets/profile.png';
 import cvFile from '../assets/Mohamed_Shamil_CV (1).pdf';
 
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden">
-      {/* Dynamic Background */}
-      <div className="absolute top-[10%] left-[5%] w-[500px] h-[500px] bg-zinc-600/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none" />
-      <div className="absolute bottom-[10%] right-[5%] w-[600px] h-[600px] bg-white/5 rounded-full blur-[150px] mix-blend-screen pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.03)_0%,transparent_70%)] pointer-events-none" />
+  const proofItems = [
+    {
+      metric: "44%",
+      label: "Cart Intent Rate",
+      subtext: "51K+ Reach • Oman Meta Ads",
+      icon: <TrendingUp className="w-4 h-4 text-emerald-400" />
+    },
+    {
+      metric: "10+",
+      label: "Landing Pages Shipped",
+      subtext: "India & GCC",
+      icon: <Layers className="w-4 h-4 text-sky-400" />
+    },
+    {
+      metric: "4+",
+      label: "Brands Managed",
+      subtext: "End-to-End Execution",
+      icon: <ShieldCheck className="w-4 h-4 text-purple-400" />
+    }
+  ];
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+  return (
+    <section className="relative min-h-[90vh] flex flex-col justify-center pt-32 pb-16 overflow-hidden">
+      {/* Subtle Glows */}
+      <div className="absolute top-[12%] left-[8%] w-[420px] h-[420px] bg-zinc-700/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-[15%] right-[8%] w-[480px] h-[480px] bg-emerald-950/15 rounded-full blur-[160px] pointer-events-none" />
+
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center mb-16">
           {/* Text Content */}
-          <motion.div 
-            className="flex flex-col items-center text-center lg:items-start lg:text-left order-2 lg:order-1"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+          <motion.div
+            className="lg:col-span-7 flex flex-col items-center text-center lg:items-start lg:text-left order-2 lg:order-1"
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium tracking-wide mb-8 backdrop-blur-md"
-            >
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              Full-Stack Developer & Digital Marketer
-            </motion.div>
-            
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 text-white leading-[1.1]">
-              Engineering <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 via-white to-zinc-500 drop-shadow-sm">
-                Digital Growth
+            {/* Eyebrow Tag */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-zinc-300 text-xs font-medium tracking-wide mb-6 backdrop-blur-md">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Performance Marketer • Meta &amp; Google Ads • AI-First Web Builder (Kerala, India)</span>
+            </div>
+
+            {/* Main H1 Headline */}
+            <h1 className="text-3xl sm:text-5xl lg:text-[3.4rem] font-extrabold tracking-tight mb-6 text-white leading-[1.14]">
+              Most Marketers Stop at the Click. <br className="hidden sm:inline" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 via-white to-zinc-400">
+                I Fix What Happens After It.
               </span>
             </h1>
-            
-            <p className="text-lg md:text-xl text-zinc-400 mb-10 max-w-xl font-light leading-relaxed">
-              I'm <strong className="text-white font-semibold">Mohamed Shamil K</strong>. A unique hybrid of a Full-Stack Developer and Digital Marketer. I build robust web applications and craft data-driven marketing strategies to scale them.
+
+            {/* Bio */}
+            <p className="text-base sm:text-lg text-zinc-400 mb-8 max-w-2xl font-light leading-relaxed">
+              Hi, I’m <strong className="text-white font-semibold">Mohamed Shamil K</strong>. I run profitable Meta and Google Ad campaigns, manage social brands, and build fast, high-converting landing pages. Because I started my career in software engineering (where my first projects were created and coded entirely by me by hand), I don’t just throw budget at ads—I track down why people abandon your cart, fix broken checkout flows, and use modern AI &quot;vibe coding&quot; right now to ship custom web tools with zero manual code in days instead of months.
             </p>
-            
-            <motion.div 
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 w-full"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-            >
-              <a href="#projects" className="group flex items-center gap-2 px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]">
-                View Work
+
+            {/* Action Buttons Row */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 w-full mb-6">
+              <Link
+                to="/case-study"
+                className="group inline-flex items-center gap-2 px-6 py-3.5 bg-white text-black font-semibold text-sm rounded-full hover:bg-zinc-200 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+              >
+                <span>Read My E-Commerce Funnel Audit</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+
+              <Link
+                to="/projects"
+                className="inline-flex items-center gap-2 px-5 py-3.5 bg-white/5 border border-white/10 text-white font-semibold text-sm rounded-full hover:bg-white/10 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] backdrop-blur-sm"
+              >
+                <Sparkles className="w-4 h-4 text-amber-400" />
+                <span>View AI-Built Apps</span>
+              </Link>
+
+              <a
+                href={cvFile}
+                download="Mohamed_Shamil_CV.pdf"
+                className="inline-flex items-center gap-2 px-4 py-3.5 bg-white/5 border border-white/10 text-zinc-300 hover:text-white font-medium text-sm rounded-full hover:bg-white/10 transition-all duration-200 backdrop-blur-sm"
+                title="Download CV"
+              >
+                <Download className="w-4 h-4" />
+                <span>CV</span>
               </a>
-              <a href={cvFile} download="Mohamed_Shamil_CV.pdf" className="group flex items-center gap-2 px-8 py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg backdrop-blur-sm">
-                Download CV
-                <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+            </div>
+
+            {/* Socials Connection */}
+            <div className="flex items-center gap-2.5 pt-2">
+              <span className="text-xs uppercase tracking-wider text-zinc-500 font-medium mr-1">Direct:</span>
+              <a
+                href="https://wa.me/918075448758?text=Hi%20Shamil,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project!"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="WhatsApp"
+                className="p-2.5 bg-white/5 border border-white/10 rounded-full hover:bg-emerald-500/20 hover:border-emerald-500/40 text-zinc-300 hover:text-emerald-400 transition-all duration-200"
+              >
+                <FaWhatsapp className="w-4 h-4" />
               </a>
-              <div className="flex items-center gap-3">
-                <a href="https://github.com/N-o-o-b-Dev" target="_blank" rel="noreferrer" className="p-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 text-white backdrop-blur-sm">
-                  <FaGithub className="w-5 h-5" />
-                </a>
-                <a href="https://linkedin.com/in/" target="_blank" rel="noreferrer" className="p-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 text-white backdrop-blur-sm">
-                  <FaLinkedin className="w-5 h-5" />
-                </a>
-                <a href="mailto:mhdshamil136@gmail.com" className="p-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 text-white backdrop-blur-sm">
-                  <Mail className="w-5 h-5" />
-                </a>
-              </div>
-            </motion.div>
+              <a
+                href="https://github.com/N-o-o-Dev"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+                className="p-2.5 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 text-zinc-300 hover:text-white transition-all duration-200"
+              >
+                <FaGithub className="w-4 h-4" />
+              </a>
+              <a
+                href="https://linkedin.com/in/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+                className="p-2.5 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 text-zinc-300 hover:text-white transition-all duration-200"
+              >
+                <FaLinkedin className="w-4 h-4" />
+              </a>
+              <a
+                href="mailto:mhdshamil136@gmail.com"
+                aria-label="Email"
+                className="p-2.5 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 text-zinc-300 hover:text-white transition-all duration-200"
+              >
+                <Mail className="w-4 h-4" />
+              </a>
+            </div>
           </motion.div>
 
-          {/* Image Content */}
-          <motion.div 
-            className="flex justify-center lg:justify-end order-1 lg:order-2 w-full"
-            initial={{ opacity: 0, x: 50, rotate: 2 }}
-            animate={{ opacity: 1, x: 0, rotate: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+          {/* Profile Photo */}
+          <motion.div
+            className="lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2 w-full"
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="relative group w-[280px] xs:w-[320px] sm:w-[380px] md:w-[420px] xl:w-[480px]">
-              {/* Glowing effects behind the image */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-zinc-500 to-white/20 rounded-[2rem] blur-xl opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-500 animate-pulse"></div>
-              
-              <div className="relative aspect-[3/4] sm:aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 bg-zinc-900/50 backdrop-blur-sm shadow-2xl transform transition-transform duration-700 hover:scale-[1.02]">
-                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
-                <motion.img 
+            <div className="relative group w-full max-w-[340px] sm:max-w-[370px]">
+              <div className="absolute -inset-1 bg-gradient-to-b from-white/15 via-emerald-500/10 to-transparent rounded-3xl blur-lg opacity-40 group-hover:opacity-70 transition duration-500"></div>
+
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 bg-zinc-900/60 backdrop-blur-sm shadow-2xl">
+                <img
                   src={profileImg}
-                  alt="Mohamed Shamil K" 
-                  className="w-full h-full object-cover object-top scale-105"
-                  initial={{ scale: 1.2, filter: 'grayscale(100%)' }}
-                  animate={{ scale: 1, filter: 'grayscale(0%)' }}
-                  transition={{ duration: 1.5, ease: "easeOut" }}
-                  whileHover={{ scale: 1.05 }}
+                  alt="Mohamed Shamil K - Performance Marketer &amp; AI Web Builder"
+                  className="w-full h-full object-cover object-top filter grayscale contrast-105 group-hover:grayscale-0 transition-all duration-700"
                 />
-                
-                {/* Overlay Text on Image */}
-                <div className="absolute bottom-8 left-8 right-8 z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <p className="text-white/80 text-xs font-semibold tracking-widest uppercase mb-2 drop-shadow-md">Currently</p>
-                  <p className="text-white text-xl font-bold drop-shadow-lg leading-snug">Building extraordinary things.</p>
+
+                <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/95 via-black/60 to-transparent">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-emerald-400">Status</span>
+                  </div>
+                  <p className="text-white text-sm font-semibold">Scaling Brands • Fixing Funnels • Vibe Coding</p>
+                  <p className="text-zinc-400 text-xs mt-0.5">Kerala, India • Available for GCC &amp; Global</p>
                 </div>
               </div>
             </div>
           </motion.div>
         </div>
-      </div>
 
-      <motion.div 
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 1 }}
-      >
-        <a href="#about" className="text-zinc-500 hover:text-white transition-colors flex flex-col items-center gap-2 group">
-          <span className="text-[10px] tracking-[0.3em] uppercase opacity-70 group-hover:opacity-100 transition-opacity">Discover</span>
-          <ChevronDown className="w-4 h-4 animate-bounce opacity-70 group-hover:opacity-100 transition-opacity" />
-        </a>
-      </motion.div>
+        {/* Quick Proof Bar: Balanced 4-card grid */}
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-white/10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
+          {proofItems.map((item, index) => (
+            <div
+              key={index}
+              className="glass-card p-5 border border-white/10 hover:border-white/20 transition-all flex flex-col justify-between"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <span className="p-2 rounded-xl bg-white/5 border border-white/10">
+                  {item.icon}
+                </span>
+                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
+                  Verified
+                </span>
+              </div>
+              <div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-1">
+                  {item.metric}
+                </div>
+                <div className="text-xs sm:text-sm font-semibold text-zinc-200">
+                  {item.label}
+                </div>
+                <div className="text-[11px] text-zinc-500 mt-0.5">
+                  {item.subtext}
+                </div>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Subtle scroll indicator pointing down to Education */}
+        <div className="flex justify-center mt-12">
+          <a href="#credentials" className="text-zinc-500 hover:text-white transition-colors flex flex-col items-center gap-1.5 text-xs tracking-widest uppercase">
+            <span>Credentials &amp; Education</span>
+            <ChevronDown className="w-4 h-4 animate-bounce" />
+          </a>
+        </div>
+      </div>
     </section>
   );
 };
